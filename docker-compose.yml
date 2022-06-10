@@ -1,15 +1,15 @@
 version: '3.8'
 
 services:
-  api:
+  app:
     build:
-      context: ./docker/api/
-    image: challange_api
+      context: ./docker/app/
+    image: challange_app
     networks:
       - internal_net
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s
     volumes:
-      - ./api:/api
+      - ./app:/app
     depends_on:
       - db
     command: node index.js

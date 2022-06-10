@@ -1,6 +1,6 @@
 FROM node:18.3-alpine
 
-WORKDIR /api
+WORKDIR /app
 
 RUN apk add --no-cache openssl
 
