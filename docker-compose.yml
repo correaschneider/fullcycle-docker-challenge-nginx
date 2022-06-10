@@ -4,7 +4,7 @@ services:
   db:
     build:
       context: ./docker/mysql/
-    image: mysql_db
+    image: challange_db
     container_name: db
     environment:
       - MYSQL_ROOT_PASSWORD=codeeducation
