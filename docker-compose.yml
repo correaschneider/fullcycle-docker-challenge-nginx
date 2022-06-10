@@ -18,6 +18,7 @@ services:
 
 networks:
   internal_net:
+    driver: bridge
 
 # volumes:
   # db_volume:
