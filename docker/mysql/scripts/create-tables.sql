@@ -1,4 +1,4 @@
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255)
+    `name` VARCHAR(255)
 );
