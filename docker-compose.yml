@@ -4,12 +4,14 @@ services:
   db:
     build:
       context: ./docker/mysql/
+    image: mysql_db
     container_name: db
     environment:
       - MYSQL_ROOT_PASSWORD=codeeducation
       - MYSQL_DATABASE=codeeducation
     networks:
       - internal_net
+    tty: true
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
 
