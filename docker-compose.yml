@@ -7,6 +7,7 @@ services:
     container_name: db
     environment:
       - MYSQL_ROOT_PASSWORD=codeeducation
+      - MYSQL_DATABASE=codeeducation
     networks:
       - internal_net
     volumes:
