@@ -12,6 +12,7 @@ services:
     networks:
       - internal_net
     tty: true
+    restart: always
     volumes:
       # - db_volume:/var/lib/mysql
       - ./docker/mysql/data:/var/lib/mysql
