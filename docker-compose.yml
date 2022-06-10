@@ -13,7 +13,11 @@ services:
       - internal_net
     tty: true
     volumes:
+      # - db_volume:/var/lib/mysql
       - ./docker/mysql/data:/var/lib/mysql
 
 networks:
   internal_net:
+
+# volumes:
+  # db_volume:
