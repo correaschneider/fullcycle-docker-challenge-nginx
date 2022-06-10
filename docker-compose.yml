@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  api:
+    build:
+      context: ./docker/api/
+    image: challange_api
+    networks:
+      - internal_net
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s
+    volumes:
+      - ./api:/api
+    depends_on:
+      - db
+    command: node index.js
+
   db:
     build:
       context: ./docker/mysql/
