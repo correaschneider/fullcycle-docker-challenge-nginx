@@ -4,6 +4,7 @@ services:
   app:
     build:
       context: ./docker/app/
+    container_name: app
     image: challange_app
     networks:
       - internal_net
