@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db:
+    build:
+      context: ./docker/mysql/
+    container_name: db
+    environment:
+      - MYSQL_ROOT_PASSWORD=codeeducation
+    networks:
+      - internal_net
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+
+networks:
+  internal_net:
