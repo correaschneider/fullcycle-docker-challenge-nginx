@@ -1,6 +1,18 @@
 version: '3.8'
 
 services:
+  proxy:
+    build:
+      context: ./docker/proxy/
+    image: challange_proxy
+    container_name: proxy
+    networks:
+      - external_net
+    ports:
+      - 8080:80
+    depends_on:
+      - app
+
   app:
     build:
       context: ./docker/app/
@@ -8,6 +20,7 @@ services:
     image: challange_app
     networks:
       - internal_net
+      - external_net
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s
     volumes:
       - ./app:/app
@@ -33,6 +46,8 @@ services:
 
 networks:
   internal_net:
+    driver: bridge
+  external_net:
     driver: bridge
 
 # volumes:
