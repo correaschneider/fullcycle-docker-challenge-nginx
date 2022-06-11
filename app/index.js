@@ -4,7 +4,7 @@ const userServices = require('./services/mysql')
 
 app.get('/', async (req, res) => {
 
-    userServices.createUser({name: random.int(0,1) === 0 ? random.maleFirstName() : random.femaleFirstName() })
+    await userServices.createUser({name: random.int(0,1) === 0 ? random.maleFirstName() : random.femaleFirstName() })
     const users = await userServices.getUsers()
 
     html = '<h1>Full Cycle Rocks!</h1>'
